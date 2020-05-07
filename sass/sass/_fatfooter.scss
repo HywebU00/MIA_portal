@@ -4,8 +4,24 @@
     overflow: hidden;
     padding-bottom: 2em;
     margin: 0 auto;
+    position: relative;
     // @include gradient(darken(#2fcf14, 10), #0494eb, horizontal);
-    background:#5d5d5d url(../images/fatfooter_bg.jpg) no-repeat center bottom;
+    background: rgb(22,140,2);
+background: -moz-linear-gradient(90deg, rgba(22,140,2,1) 0%, rgba(0,111,128,1) 52%, rgba(2,112,209,1) 100%);
+background: -webkit-linear-gradient(90deg, rgba(22,140,2,1) 0%, rgba(0,111,128,1) 52%, rgba(2,112,209,1) 100%);
+background: linear-gradient(90deg, rgba(22,140,2,1) 0%, rgba(0,111,128,1) 52%, rgba(2,112,209,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#168c02",endColorstr="#0270d1",GradientType=1);
+    &:before {
+        position: absolute;
+        width: 100%;
+        height: 80%;
+        content: "";
+        top: 20%;
+        background: url(../images/fatfooter_bg.png) no-repeat center bottom;
+        background-size: contain;
+        left: 50%;
+        margin-left: -50%;
+    }
     @include screen('mobile') {
         display: none;
     }
@@ -25,7 +41,7 @@
         position: absolute;
         right: 1%;
         z-index: 90;
-        top:.5em;
+        top: .5em;
         text-indent: -9999px;
         @include border-radius(4px);
         &:before {
@@ -100,7 +116,7 @@
                     display: block;
                     font-weight: bold;
                     padding: .5em;
-                    color: lighten($color-yellow,10);
+                    color: lighten($color-yellow, 10);
                     text-shadow: 1px 1px 2px RGBA(0, 0, 0, .25);
                     border-bottom: 2px solid #AAA;
                     @include box-sizing;
@@ -108,7 +124,7 @@
                         box-shadow: none;
                     }
                     &:hover, &:focus {
-                        cursor:pointer;
+                        cursor: pointer;
                         background: RGBA(0, 0, 0, .5);
                         // @include border-radius(6px);
                     }
@@ -130,9 +146,9 @@
                             display: block;
                             // @include aSetting_nocolor;
                             font-weight: normal;
-                            border:none;
+                            border: none;
                             text-align: left;
-                            color:#FFF;
+                            color: #FFF;
                             font-size: .938em;
                             line-height: 1.5em;
                             padding: .4em .2em .4em .8em;
